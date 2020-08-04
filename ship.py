@@ -9,17 +9,17 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
 
-        #load the image and get it's rect
+        # load the image and get it's rect
         self.image = pygame.image.load('rocket.bmp')
         self.image = pygame.transform.scale(self.image,(150,100))
         self.rect= self.image.get_rect()
 
-        #start the ship at the bottom centre of the screen
+        # start the ship at the bottom centre of the screen
         self.rect.midbottom= self.screen_rect.midbottom
 
-        #store the value of ship'shorizontal position
+        # store the value of ship'shorizontal position
         self.x= float(self.rect.x)
-        #movements flags
+        # movements flags
         self.moving_right= False
         self.moving_left = False
 
@@ -31,7 +31,7 @@ class Ship:
         if self.moving_left and self.rect.left>0:
             self.x -= self.setting.ship_speed
 
-        #update the rect object from self.x
+        # update the rect object from self.x
         self.rect.x = self.x
 
     def center_ship(self):
